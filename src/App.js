@@ -1,14 +1,18 @@
 // import "./App.css";
 import axios from "axios";
 import { useEffect, useState } from "react";
+import AsyncAwait from "./AsyncAwait";
 import Axios from "./Axios";
 import FetchAPI from "./FetchAPI";
+import MulitpleAPI from "./MulitpleAPI";
 
 function App() {
   return (
     <div>
       {/* <FetchAPI /> */}
-      <Axios />
+      {/* <Axios /> */}
+      {/* <MulitpleAPI /> */}
+      <AsyncAwait />
     </div>
   );
 }

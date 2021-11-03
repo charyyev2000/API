@@ -23,3 +23,23 @@ const Axios = () => {
 };
 
 export default Axios;
+
+/* const [data, setData] = useState(null)
+    const [loading, setLoadind] = useState(true)
+    const [error, setError ] = useState(null)
+
+    useEffect(() => {
+        axios('url-here')
+        .then((res) => {
+            setData(res.data)
+            setLoading(false)
+        },
+        (error) => {
+            console.error("Error fetching data: ", error)
+            setError(error)
+        })
+    }, [])
+
+    if(loading) return "Loading"
+    if(error) return "Error"
+*/

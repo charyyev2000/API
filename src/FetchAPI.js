@@ -2,20 +2,28 @@ import React, { useEffect, useState } from "react";
 
 const FetchAPI = () => {
   const [users, setUsers] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   const apiGet = () => {
     fetch("https://jsonplaceholder.typicode.com/posts")
       .then((res) => res.json())
       .then((json) => {
         setUsers(json);
+        setError(error);
       })
-      .catch((error) => console.error(error));
+      .catch((error) => console.error(error))
+      .finally(() => {
+        setLoading(false);
+      });
   };
 
   useEffect(() => {
     apiGet();
   }, []);
 
+  if (loading) return "Loading...";
+  if (error) return "Error";
   return (
     <div>
       {users.map((data) => {
